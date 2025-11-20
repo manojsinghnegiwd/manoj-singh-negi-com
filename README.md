@@ -5,9 +5,8 @@ A minimal, single-page portfolio website built with Next.js, TypeScript, Tailwin
 ## Features
 
 - 🎨 **Minimal Design**: Clean, modern interface with dark mode support
-- 🤖 **AI Chatbot**: Interactive AI assistant powered by OpenAI (floating bar at bottom)
-- 📦 **GitHub Integration**: Automatically fetches and displays featured repositories
-- 🎥 **YouTube Showcase**: Displays your most popular videos
+- 🏢 **Companies Showcase**: Display companies you've helped build with clickable links
+- 🎥 **YouTube Integration**: Displays your most popular videos with auto-refresh API
 - 📝 **Blog Integration**: Pulls latest posts from WordPress (debuggingmylife.com)
 - 📱 **Fully Responsive**: Optimized for all screen sizes
 - ⚡ **Fast & Modern**: Built with Next.js 14 App Router and server components
@@ -19,7 +18,7 @@ A minimal, single-page portfolio website built with Next.js, TypeScript, Tailwin
 - **Styling**: Tailwind CSS v4
 - **UI Components**: shadcn/ui
 - **Icons**: Lucide React
-- **AI**: OpenAI API
+- **Web Scraping**: Puppeteer for YouTube crawler
 - **Deployment**: Vercel-ready
 
 ## Getting Started
@@ -27,7 +26,7 @@ A minimal, single-page portfolio website built with Next.js, TypeScript, Tailwin
 ### Prerequisites
 
 - Node.js 18+ and npm
-- OpenAI API key (for the AI chatbot)
+- No API keys required!
 
 ### Installation
 
@@ -42,19 +41,7 @@ cd manojsinghnegicom
 npm install
 ```
 
-3. Create a `.env.local` file with your environment variables:
-```env
-# OpenAI API Key (required for AI chatbot)
-OPENAI_API_KEY=your_openai_api_key_here
-
-# GitHub Token (optional - for higher API rate limits)
-GITHUB_TOKEN=
-
-# WordPress Blog URL
-WORDPRESS_BLOG_URL=https://debuggingmylife.com
-```
-
-4. Update your personal information in `config/site.ts`:
+3. Update your personal information in `config/site.ts`:
    - Name, tagline, and bio
    - Social links (GitHub, YouTube, LinkedIn, etc.)
    - Featured GitHub repository slugs
@@ -195,11 +182,7 @@ Set up a cron job or scheduled task (e.g., GitHub Actions, Vercel Cron) to call 
 
 1. Push your code to GitHub
 2. Import your repository on [Vercel](https://vercel.com)
-3. Add environment variables:
-   - `OPENAI_API_KEY` (required)
-   - `GITHUB_TOKEN` (optional)
-   - `WORDPRESS_BLOG_URL` (optional)
-4. Deploy!
+3. Deploy! (No environment variables needed)
 
 ### Deploy to Other Platforms
 
@@ -215,31 +198,30 @@ Ensure environment variables are set in your hosting platform.
 ```
 /app
   /api
-    /chat              # OpenAI chatbot endpoint
-    /github            # GitHub API proxy
     /blog              # WordPress API proxy
     /refresh-content   # Refresh all content (YouTube + Blog)
     /refresh-youtube   # Refresh YouTube videos
     /refresh-blog      # Refresh blog posts
-  layout.tsx       # Root layout with header, footer, AI chat
-  page.tsx         # Main landing page
+  layout.tsx           # Root layout with footer and theme toggle
+  page.tsx             # Main landing page
 /components
-  - hero.tsx              # Hero section
-  - github-projects.tsx   # GitHub projects grid
-  - youtube-section.tsx   # YouTube videos grid
-  - blog-posts.tsx        # Blog posts grid
-  - ai-chat.tsx           # Floating AI chatbot bar
-  - header.tsx            # Site header with theme toggle
-  - footer.tsx            # Site footer
-  - theme-toggle.tsx      # Dark mode toggle
-  /ui                     # shadcn/ui components
+  - hero.tsx                  # Hero section with intro and social links
+  - companies.tsx             # Companies showcase
+  - youtube-section.tsx       # YouTube videos grid
+  - blog-posts.tsx            # Blog posts grid
+  - footer.tsx                # Site footer
+  - theme-toggle.tsx          # Dark/light mode toggle
+  - floating-theme-toggle.tsx # Floating theme toggle button
+  /ui                         # shadcn/ui components
 /lib
-  - github.ts      # GitHub API helpers
-  - wordpress.ts   # WordPress API helpers
-  - openai.ts      # OpenAI client
-  - utils.ts       # Utility functions
+  - wordpress.ts       # WordPress API helpers
+  - youtube-crawler.ts # Puppeteer-based YouTube crawler
+  - utils.ts           # Utility functions
 /config
-  - site.ts        # Site configuration
+  - site.ts            # Site configuration (companies, videos, links)
+/scripts
+  - crawl-youtube-channel.js # YouTube channel crawler
+  - README.md                # Script documentation
 ```
 
 ## Customization

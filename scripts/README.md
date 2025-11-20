@@ -13,7 +13,7 @@ npm run crawl:youtube
 That's it! The script will:
 1. Open your YouTube channel in a headless browser
 2. Crawl the videos page
-3. Extract titles, view counts, and video IDs
+3. Extract titles and video IDs
 4. Generate formatted config code
 5. Save data to `youtube-videos.json`
 
@@ -42,7 +42,7 @@ node scripts/crawl-youtube-channel.js https://www.youtube.com/@YourChannel/video
 
 The crawler:
 - ✅ Uses Puppeteer (headless Chrome) to load your channel
-- ✅ Extracts video titles, IDs, view counts
+- ✅ Extracts video titles and IDs
 - ✅ Gets high-quality thumbnail URLs
 - ✅ Formats everything for `config/site.ts`
 - ✅ Saves JSON backup
@@ -63,7 +63,6 @@ featuredVideos: [
     id: "lnOq5AYTBCs",
     title: "Building an AI Task Planner with Next js & OpenAI",
     thumbnail: "https://img.youtube.com/vi/lnOq5AYTBCs/maxresdefault.jpg",
-    views: "146",
     url: "https://www.youtube.com/watch?v=lnOq5AYTBCs",
   },
   // ... more videos
@@ -82,65 +81,28 @@ featuredVideos: [
 - Try running again
 - Check your internet connection
 
-### Wrong view counts
-- View counts are approximate
-- YouTube sometimes shows "No views" for very new videos
-- You can manually adjust in `config/site.ts`
-
 ## 💡 Tips
 
 **Best Practices:**
 - Run the script periodically to keep videos updated
 - Show 2-3 videos for minimal design
 - Pick videos with good thumbnails
-- Sort by views to show most popular
 
 **Manual Adjustments:**
 After running the script, you can manually:
 - Reorder videos
 - Update titles for better formatting
-- Adjust view counts to be more appealing (e.g., "150" → "150+")
-
-## 🆚 vs API Method
-
-| Feature | Web Crawler | YouTube API |
-|---------|------------|-------------|
-| API Key | ❌ Not needed | ✅ Required |
-| View Count | ✅ Accurate | ✅ Accurate |
-| Titles | ✅ Exact | ✅ Exact |
-| Speed | 🐢 Slower (15-30s) | ⚡ Faster (2-5s) |
-| Rate Limits | ✅ None | ⚠️ 10K/day |
-| Reliability | ⚠️ May break if YT changes HTML | ✅ Stable |
-
-**Recommendation:** Use the web crawler for initial setup and occasional updates. It's simple and requires no API setup!
-
-## 📚 Technical Details
-
-**Stack:**
-- Puppeteer (headless Chrome)
-- No external APIs
-- Direct HTML parsing
-
-**How it works:**
-1. Launches Chrome in headless mode
-2. Navigates to your channel's videos page
-3. Waits for videos to render
-4. Scrolls to load more content
-5. Extracts data from DOM
-6. Formats and outputs config
 
 ## 🔄 Keeping Videos Fresh
 
 To update your portfolio videos regularly:
 
 1. **Manual:** Run `npm run crawl:youtube` whenever you want
-2. **Scheduled:** Set up a cron job or GitHub Action
-3. **On demand:** Run before deployments
+2. **API:** Use the refresh endpoint: `GET /api/refresh-youtube`
 
-**Example weekly update:**
+**Example API call:**
 ```bash
-# Add to crontab (runs every Sunday at 3 AM)
-0 3 * * 0 cd /path/to/project && npm run crawl:youtube
+curl https://your-domain.com/api/refresh-youtube?maxVideos=5
 ```
 
 ---

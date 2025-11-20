@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Calendar } from "lucide-react";
 
 export async function BlogPosts() {
-  const blogUrl = process.env.WORDPRESS_BLOG_URL || "https://debuggingmylife.com";
+  const blogUrl = "https://debuggingmylife.com";
   const posts = await getWordPressPosts(blogUrl, 3);
 
   if (posts.length === 0) {
