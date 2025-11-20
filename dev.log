@@ -1,0 +1,80 @@
+
+> manojsinghnegicom@0.1.0 dev
+> next dev
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/manoj/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/manoj/Projects/manojsinghnegicom/package-lock.json
+
+   ▲ Next.js 16.0.3 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.1.13:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 469ms
+ GET / 200 in 1619ms (compile: 961ms, render: 657ms)
+ GET / 200 in 1751ms (compile: 1159ms, render: 591ms)
+ GET / 200 in 63ms (compile: 4ms, render: 60ms)
+ GET / 200 in 85ms (compile: 3ms, render: 82ms)
+ GET / 200 in 250ms (compile: 19ms, render: 231ms)
+ GET / 200 in 176ms (compile: 41ms, render: 135ms)
+ GET / 200 in 47ms (compile: 1359µs, render: 45ms)
+ GET / 200 in 138ms (compile: 46ms, render: 92ms)
+ GET / 200 in 135ms (compile: 110ms, render: 24ms)
+ GET / 200 in 130ms (compile: 40ms, render: 91ms)
+ GET / 200 in 26ms (compile: 1385µs, render: 25ms)
+ GET / 200 in 144ms (compile: 44ms, render: 100ms)
+ GET / 200 in 35ms (compile: 1466µs, render: 33ms)
+ GET / 200 in 144ms (compile: 34ms, render: 110ms)
+ GET / 200 in 38ms (compile: 1350µs, render: 37ms)
+ GET / 200 in 155ms (compile: 54ms, render: 102ms)
+ GET / 200 in 41ms (compile: 1062µs, render: 40ms)
+ GET / 200 in 98ms (compile: 33ms, render: 65ms)
+ GET / 200 in 24ms (compile: 969µs, render: 23ms)
+ GET / 200 in 107ms (compile: 28ms, render: 79ms)
+ GET / 200 in 24ms (compile: 999µs, render: 23ms)
+ GET / 200 in 36ms (compile: 1223µs, render: 35ms)
+ GET / 200 in 153ms (compile: 59ms, render: 94ms)
+ GET / 200 in 121ms (compile: 39ms, render: 82ms)
+ GET / 200 in 28ms (compile: 1425µs, render: 26ms)
+ GET / 200 in 104ms (compile: 22ms, render: 82ms)
+ GET / 200 in 45ms (compile: 1136µs, render: 43ms)
+ GET / 200 in 137ms (compile: 39ms, render: 98ms)
+ GET / 200 in 48ms (compile: 932µs, render: 47ms)
+ GET / 200 in 128ms (compile: 52ms, render: 75ms)
+ GET / 200 in 27ms (compile: 1012µs, render: 26ms)
+ GET / 200 in 174ms (compile: 38ms, render: 136ms)
+ GET / 200 in 75ms (compile: 1125µs, render: 74ms)
+ GET / 200 in 143ms (compile: 43ms, render: 100ms)
+ GET / 200 in 47ms (compile: 921µs, render: 46ms)
+ GET / 200 in 280ms (compile: 5ms, render: 274ms)
+ GET / 200 in 120ms (compile: 39ms, render: 81ms)
+ GET / 200 in 27ms (compile: 945µs, render: 26ms)
+ GET / 200 in 111ms (compile: 66ms, render: 44ms)
+ GET / 200 in 112ms (compile: 20ms, render: 92ms)
+ ✓ Compiled in 168ms
+ GET / 200 in 162ms (compile: 136ms, render: 26ms)
+ GET / 200 in 274ms (compile: 167ms, render: 106ms)
+ ⚠ Fast Refresh had to perform a full reload when ./Projects/manojsinghnegicom/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload when ./Projects/manojsinghnegicom/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 255ms (compile: 24ms, render: 231ms)
+ GET / 200 in 405ms (compile: 68ms, render: 337ms)
+ GET / 200 in 148ms (compile: 1093µs, render: 146ms)
+ ✓ Compiled in 26ms
+ ⚠ Fast Refresh had to perform a full reload when ./Projects/manojsinghnegicom/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload when ./Projects/manojsinghnegicom/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 248ms (compile: 88ms, render: 159ms)
+ GET / 200 in 273ms (compile: 43ms, render: 230ms)
+ GET / 200 in 367ms (compile: 8ms, render: 359ms)
+ GET / 200 in 242ms (compile: 10ms, render: 232ms)
+ ✓ Compiled in 24ms
+ ⚠ Fast Refresh had to perform a full reload when ./Projects/manojsinghnegicom/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload when ./Projects/manojsinghnegicom/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 215ms (compile: 47ms, render: 168ms)
+ GET / 200 in 234ms (compile: 118ms, render: 117ms)
+ GET / 200 in 515ms (compile: 4ms, render: 511ms)
+ GET / 200 in 388ms (compile: 3ms, render: 385ms)
