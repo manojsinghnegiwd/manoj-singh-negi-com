@@ -21,21 +21,42 @@ export async function getWordPressPosts(
   blogUrl: string,
   count: number = 5
 ): Promise<WordPressPost[]> {
+  const url = `${blogUrl}/wp-json/wp/v2/posts?per_page=${count}`;
+  
   try {
-    const url = `${blogUrl}/wp-json/wp/v2/posts?per_page=${count}&_embed`;
+    console.log(`[WordPress] Fetching posts from: ${url}`);
     
     const response = await fetch(url, {
-      next: { revalidate: 1800 }, // Cache for 30 minutes
+      headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'Mozilla/5.0 Portfolio Website',
+      },
+      // Force fetch at build time and cache the result
+      next: { revalidate: false }, // Static generation - never revalidate
     });
 
     if (!response.ok) {
-      console.error(`Failed to fetch WordPress posts: ${response.status}`);
+      console.error(`[WordPress] Failed to fetch: ${response.status} ${response.statusText}`);
+      console.error(`[WordPress] URL: ${url}`);
+      
+      // Log response body for debugging
+      const text = await response.text().catch(() => 'Could not read response');
+      console.error('[WordPress] Response:', text.substring(0, 300));
       return [];
     }
 
-    return await response.json();
+    const data = await response.json();
+    
+    if (!Array.isArray(data)) {
+      console.error('[WordPress] Response is not an array:', typeof data);
+      return [];
+    }
+    
+    console.log(`[WordPress] Successfully fetched ${data.length} posts`);
+    return data;
   } catch (error) {
-    console.error('Error fetching WordPress posts:', error);
+    console.error('[WordPress] Error fetching posts:', error);
+    console.error(`[WordPress] Attempted URL: ${url}`);
     return [];
   }
 }

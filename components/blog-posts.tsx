@@ -11,9 +11,31 @@ export async function BlogPosts() {
     return (
       <section className="px-4 py-12">
         <div className="mx-auto max-w-6xl">
+          <div className="mb-20 text-center">
+            <a
+              href={blogUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors md:text-5xl"
+            >
+              Debuggingmylife.com
+            </a>
+          </div>
           <p className="text-center text-muted-foreground">
-            Unable to load blog posts. Check your WordPress blog URL.
+            Visit the blog to read the latest posts.
           </p>
+          <div className="mt-8 text-center">
+            <Button asChild variant="outline">
+              <a
+                href={blogUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Visit Blog
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     );
